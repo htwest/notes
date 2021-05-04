@@ -39,9 +39,12 @@ export default async (req, res) => {
       try {
         const deletedNote = await Note.deleteOne({ _id: id });
         if (!deletedNote) {
+          console.log("error");
           return res.status(400).json({ success: false });
         }
+        res.status(200).json({ success: true, data: deletedNote });
       } catch (error) {
+        console.log(error);
         res.status(400).json({ success: false });
       }
       break;
