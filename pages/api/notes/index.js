@@ -18,9 +18,10 @@ export default async (req, res) => {
     case "POST":
       try {
         const note = await Note.create(req.body);
-        res.staus(201).json({ success: true, data: note });
+        res.status(201).json({ success: true, data: note });
       } catch (error) {
-        res.status(200).json({ sucess: false });
+        console.log(error);
+        res.status(200).json({ success: false });
       }
       break;
     default:
