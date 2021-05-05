@@ -37,6 +37,7 @@ export default async (req, res) => {
       break;
     case "DELETE":
       try {
+        console.log("works");
         const deletedNote = await Note.deleteOne({ _id: id });
         if (!deletedNote) {
           console.log("error");
