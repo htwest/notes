@@ -14,7 +14,6 @@ const NewNote = () => {
     if (isSubmitting) {
       if (Object.keys(errors).length === 0) {
         createNote();
-        // alert("Success");
       } else {
         setIsSubmitting(false);
       }
@@ -72,7 +71,6 @@ const NewNote = () => {
         ) : (
           <Form onSubmit={handleSubmit}>
             <Form.Input
-              // fluid={true}
               error={
                 errors.title
                   ? { content: "Please Enter a Title", pointing: "below" }
@@ -84,7 +82,6 @@ const NewNote = () => {
               onChange={handleChange}
             />
             <Form.TextArea
-              // fluid={true}
               error={
                 errors.description
                   ? { content: "Please Enter a Description", pointing: "below" }
